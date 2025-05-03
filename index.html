@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,14 +9,14 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0d0d0d, #1a1f3c);
+      background: linear-gradient(to right, #003366 25%, #000000 25%);
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: center;
     }
 
     h1 {
@@ -24,19 +24,24 @@
       font-size: 36px;
       color: #00ffff;
       margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .download-button, .wiki-link {
+      font-family: 'Press Start 2P', cursive;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      margin: 10px;
+      border-radius: 10px;
+      padding: 20px 40px;
+      font-size: 16px;
+      transition: background 0.3s;
     }
 
     .download-button {
       background-color: #00cc00;
-      padding: 20px 40px;
-      border: none;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: bold;
       color: white;
-      text-decoration: none;
-      margin-bottom: 20px;
-      transition: background 0.3s;
     }
 
     .download-button:hover {
@@ -45,12 +50,7 @@
 
     .wiki-link {
       background-color: #888;
-      padding: 10px 25px;
-      border-radius: 8px;
-      font-size: 16px;
       color: black;
-      text-decoration: none;
-      transition: background 0.3s;
     }
 
     .wiki-link:hover {
@@ -62,9 +62,8 @@
 
   <h1>TROPHIA</h1>
 
-  <a href="https://selam.com" class="download-button">DOWNLOAD</a><br>
-
-  <a href="https://wiki.com" class="wiki-link">WIKI</a>
+  <a href="bakim.html" target="_blank" class="download-button">DOWNLOAD</a><br>
+  <a href="bakim.html" target="_blank" class="wiki-link">WIKI</a>
 
 </body>
 </html>
