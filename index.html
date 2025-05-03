@@ -1,69 +1,95 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TROPHIA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'TrophiaFont';
+      src: url('font.ttf') format('truetype');
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #003366 25%, #000000 25%);
-      color: white;
-      font-family: 'Arial', sans-serif;
-      height: 100vh;
+      background: url('bg.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'TrophiaFont', sans-serif;
+      color: #fff;
+    }
+
+    nav {
+      background: rgba(0, 0, 50, 0.8);
+      padding: 15px 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
+      gap: 40px;
+      font-size: 18px;
     }
 
-    h1 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 36px;
-      color: #00ffff;
-      margin-bottom: 50px;
-      text-align: center;
-    }
-
-    .download-button, .wiki-link {
-      font-family: 'Press Start 2P', cursive;
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
-      margin: 10px;
-      border-radius: 10px;
-      padding: 20px 40px;
-      font-size: 16px;
-      transition: background 0.3s;
-    }
-
-    .download-button {
-      background-color: #00cc00;
+    nav a {
       color: white;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    .download-button:hover {
-      background-color: #009900;
+    nav a.active, nav a:hover {
+      color: yellow;
     }
 
-    .wiki-link {
-      background-color: #888;
-      color: black;
+    .content {
+      text-align: center;
+      margin-top: 100px;
     }
 
-    .wiki-link:hover {
-      background-color: #666;
+    .title {
+      font-size: 48px;
+      color: #ffd700;
+      text-shadow: 2px 2px 0 #000;
+      margin-bottom: 50px;
+    }
+
+    .maintenance {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>TROPHIA</h1>
+  <nav>
+    <a href="#" onclick="showPage('home', this)" class="active">HOME</a>
+    <a href="#" onclick="showPage('maintenance', this)">DOWNLOAD</a>
+    <a href="#" onclick="showPage('maintenance', this)">WIKI</a>
+    <a href="#" onclick="showPage('maintenance', this)">FORUM</a>
+  </nav>
 
-  <a href="bakim.html" target="_blank" class="download-button">DOWNLOAD</a><br>
-  <a href="bakim.html" target="_blank" class="wiki-link">WIKI</a>
+  <div class="content">
+    <div id="home">
+      <div class="title">TROPHIA</div>
+    </div>
+
+    <div id="maintenance" class="hidden">
+      <div class="title">BAKIMDA</div>
+      <div class="maintenance">TAHMİNİ BİTİŞ SÜRESİ: 5 GÜN</div>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId, el) {
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('maintenance').classList.add('hidden');
+      document.getElementById(pageId).classList.remove('hidden');
+
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
